@@ -74,6 +74,9 @@ int main()
         if (temperature > 80)
             setcolor(RED);
 
+        outtextxy(225, 25, "Temperature");
+        outtextxy(325, 25, printableTemperature);
+
         for (int i = 10; i >= 1; i--)
         {
             if (i == 0)
@@ -85,9 +88,6 @@ int main()
         temperatures[0] = temperature;
 
         printGraph(temperatures, 10);
-
-        outtextxy(225, 25, "Temperature");
-        outtextxy(325, 25, printableTemperature);
 
         sleep(1);
         cleardevice();
