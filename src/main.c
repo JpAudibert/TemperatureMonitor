@@ -70,8 +70,9 @@ int main()
         char printableTemperature[3];
         sprintf(printableTemperature, "%d", temperature);
 
-        // if(temperature > 80)
-        //     settextstyle(0, 10, 5);
+        setcolor(WHITE);
+        if (temperature > 80)
+            setcolor(RED);
 
         for (int i = 10; i >= 1; i--)
         {
