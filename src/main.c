@@ -2,6 +2,18 @@
 #include <stdlib.h>
 #include <graphics.h>
 
+int logTemperature(int temperature)
+{
+    FILE *fp;
+
+    if ((fp = fopen("temperatureLog.txt", "a+")) == NULL)
+        return 1;
+
+    fprintf(fp, "Temperature: %d \n", temperature);
+    fclose(fp);
+    return 0;
+}
+
 int main()
 {
     int gd = DETECT, gm;
@@ -21,7 +33,7 @@ int main()
         sleep(1);
         cleardevice();
         counter++;
-
+        logTemperature(temperature);
     }
 
     // getch();
